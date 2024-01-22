@@ -1,0 +1,62 @@
+<!-- Miroslav Mitev -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Ejercicio 4. Calcular nota</title>
+</head>
+<body>
+    <h1>Cálculo de notas</h1>
+    <p> Pide una nota (número). Muestra la calificación según la nota:</p>
+    <ul>
+        <li>0-3: Muy deficiente.</li>
+        <li>3-5: Insuficiente.</li>
+        <li>5-6: Suficiente.</li>
+        <li>6-7: Bien.</li>
+        <li>7-9: Notable.</li>
+        <li>9-10: Sobresaliente.</li>
+    </ul>
+    <script>
+        // Solicita una nota por teclado
+        var nota = prompt('Introduzca la nota ');
+        var calificacion = "";
+        var n = parseFloat(nota);
+
+        // Clasificamos la nota en un rango
+        var rango = n >= 0 && n < 3 ? "muyDeficiente" :
+                    n >= 3 && n < 5 ? "insuficiente" :
+                    n >= 5 && n < 6 ? "suficiente" :
+                    n >= 6 && n < 7 ? "bien" :
+                    n >= 7 && n < 9 ? "notable" :
+                    n >= 9 && n <= 10 ? "sobresaliente" :
+                    "incorrecto";
+
+        // Estructura de control switch-case
+        switch (rango) {
+            case "muyDeficiente":
+                calificacion = "Muy deficiente";
+                break;
+            case "insuficiente":
+                calificacion = "Insuficiente";
+                break;
+            case "suficiente":
+                calificacion = "Suficiente";
+                break;
+            case "bien":
+                calificacion = "Bien";
+                break;
+            case "notable":
+                calificacion = "Notable";
+                break;
+            case "sobresaliente":
+                calificacion = "Sobresaliente";
+                break;
+            default:
+                calificacion = "Incorrecta";
+                break;
+        }
+
+        alert('Una nota de ' + nota + ' es ' + calificacion);
+        console.log('Una nota de ' + nota + ' es ' + calificacion);
+    </script>
+</body>
+</html>
